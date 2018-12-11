@@ -12,10 +12,16 @@ class Scene1Coordinator {
   let mainPresenter: Scene1Presenter
   var component1Presenter: Component1Presenter?
   var component2Presenter: Component2Presenter?
+  var component3Presenter: Component3Presenter?
 
-  init(mainPresenter: Scene1Presenter, component1Presenter: Component1Presenter) {
+  init(
+    mainPresenter: Scene1Presenter,
+    component1Presenter: Component1Presenter?,
+    component3Presenter: Component3Presenter?
+    ) {
     self.mainPresenter = mainPresenter
     self.component1Presenter = component1Presenter
+    self.component3Presenter = component3Presenter
   }
 }
 
@@ -26,6 +32,7 @@ extension Scene1Coordinator: MainCoordinator {
 extension Scene1Coordinator: Component1Coordinator {
   func component1TextFieldUpdated(text: String) {
     component2Presenter?.updateTextField(text: text)
+    component3Presenter?.addNewCell(with: text)
   }
 }
 

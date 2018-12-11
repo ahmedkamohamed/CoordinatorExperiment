@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 protocol Component2Coordinator {
   func component2TextFieldUpdated(text: String)
 }

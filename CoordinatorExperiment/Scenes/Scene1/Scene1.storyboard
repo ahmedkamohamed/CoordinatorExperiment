@@ -58,13 +58,23 @@
                                     <action selector="goToCompoenent2Clicked:" destination="857-wf-eJH" eventType="touchUpInside" id="bGF-K2-mCB"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFk-U8-beR">
+                                <rect key="frame" x="67" y="450" width="240" height="197"/>
+                                <connections>
+                                    <segue destination="4lt-sM-NNk" kind="embed" id="wlV-IA-WzZ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.43665238699999998" green="1" blue="0.94589444479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oFk-U8-beR" firstAttribute="top" secondItem="kpT-6H-DLu" secondAttribute="bottom" constant="46" id="07E-h1-nME"/>
                             <constraint firstItem="xyF-Eb-2ly" firstAttribute="centerX" secondItem="Avr-jh-pYP" secondAttribute="centerX" id="4s3-cG-XYC"/>
                             <constraint firstItem="kpT-6H-DLu" firstAttribute="top" secondItem="xyF-Eb-2ly" secondAttribute="bottom" constant="20" id="5mV-ew-PTe"/>
+                            <constraint firstItem="Avr-jh-pYP" firstAttribute="bottom" secondItem="oFk-U8-beR" secondAttribute="bottom" constant="20" id="H6E-UE-4hQ"/>
                             <constraint firstItem="xyF-Eb-2ly" firstAttribute="top" secondItem="dm5-fi-jZk" secondAttribute="bottom" constant="69.5" id="PQP-Rc-oyR"/>
+                            <constraint firstItem="Avr-jh-pYP" firstAttribute="trailing" secondItem="oFk-U8-beR" secondAttribute="trailing" constant="68" id="PbH-Qv-xpq"/>
                             <constraint firstItem="dm5-fi-jZk" firstAttribute="centerX" secondItem="Avr-jh-pYP" secondAttribute="centerX" id="V9i-Od-5oc"/>
+                            <constraint firstItem="oFk-U8-beR" firstAttribute="leading" secondItem="Avr-jh-pYP" secondAttribute="leading" constant="67" id="axH-jy-jSm"/>
                             <constraint firstItem="dm5-fi-jZk" firstAttribute="top" secondItem="Avr-jh-pYP" secondAttribute="top" constant="44" id="ecg-zA-pam"/>
                             <constraint firstItem="kpT-6H-DLu" firstAttribute="centerX" secondItem="Avr-jh-pYP" secondAttribute="centerX" id="mwn-oH-GRj"/>
                             <constraint firstItem="Avr-jh-pYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dm5-fi-jZk" secondAttribute="leading" constant="-10" id="nGq-Ie-q42"/>
@@ -98,6 +108,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLd-zF-F7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13260" y="-658.02098950524737"/>
+        </scene>
+        <!--Component3 View Controller-->
+        <scene sceneID="YNO-Ka-K8y">
+            <objects>
+                <viewController id="4lt-sM-NNk" customClass="Component3ViewController" customModule="CoordinatorExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d3c-Sa-Oox">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="197"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="d3c-Sa-Oox" id="3oR-Hg-W8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vae-I0-WXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14198" y="-123"/>
         </scene>
     </scenes>
 </document>

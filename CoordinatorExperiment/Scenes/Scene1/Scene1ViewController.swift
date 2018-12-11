@@ -14,11 +14,16 @@ protocol Scene1View {
 
 class Scene1ViewController: UIViewController {
   @IBOutlet weak var component1View: Component1View!
+  var component3View: Component3ViewController?
   lazy var presenter: Scene1PresenterImpl = {
     return Scene1PresenterImpl(view: self)
   }()
   lazy var coordinator: Scene1Coordinator = {
-    return Scene1Coordinator(mainPresenter: presenter, component1Presenter: component1View.presenter)
+    return Scene1Coordinator(
+      mainPresenter: presenter,
+      component1Presenter: component1View.presenter,
+      component3Presenter: component3View?.presenter ?? nil
+    )
   }()
   required init() {
     super.init(nibName: NSStringFromClass(Scene1ViewController.self).components(
@@ -55,5 +60,18 @@ extension Scene1ViewController: Scene1View {
     component2ViewController.presenter.coordinator = coordinator
     coordinator.component2Presenter = component2ViewController.presenter
     navigationController?.pushViewController(component2ViewController, animated: true)
+  }
+}
+
+extension Scene1ViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.destination {
+
+    case let vc as Component3ViewController:
+      self.component3View = vc
+
+    default:
+      break
+    }
   }
 }
