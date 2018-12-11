@@ -9,10 +9,6 @@
 import UIKit
 
 class RootViewController: UIViewController {
-  lazy var mainSceneRouter: MainSceneRounter = {
-    return MainSceneRounter(navigationController: navigationController!)
-  }()
-
   required init() {
     super.init(nibName: NSStringFromClass(RootViewController.self).components(separatedBy: (".")).last!, bundle: nil)
   }
@@ -23,22 +19,19 @@ class RootViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
   @IBAction func goToMainScreenClicked(_ sender: Any) {
-    mainSceneRouter.presentScene()
+    presentScene1()
   }
+}
 
+extension RootViewController {
+  func presentScene1() {
+    present(
+      Scene1Factory.buildScene1(),
+      animated: true,
+      completion: nil
+    )
+  }
 }
